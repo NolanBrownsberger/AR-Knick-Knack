@@ -8,6 +8,7 @@ public class TimeAPI : MonoBehaviour
     public GameObject timeTextObject;
     public Light sunLight;
     public Light tentLight;
+    private int timeOffset = -2;
 
     // Ambient Sound
     public AudioSource audioSource;
@@ -27,7 +28,7 @@ public class TimeAPI : MonoBehaviour
     void UpdateTimeAndSun()
     {
         // subtract 2 hours
-        System.DateTime adjustedTime = System.DateTime.Now.AddHours(-2);
+        System.DateTime adjustedTime = System.DateTime.Now.AddHours(timeOffset);
 
         int currenthour = adjustedTime.Hour;
 
